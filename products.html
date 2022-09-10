@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <title>Add Products</title>
+</head>
+
+<body>
+
+    <header class="p-3" style="background-color:rgb(100, 100, 200);color:white;height:80px;">
+
+
+        <h3>
+            Add Products
+        </h3>
+
+        <div style="float: right;">
+            <a href="add-cadets.html">
+                <button class="menu-btn">
+                    <i class="fa fa-plus"></i>
+                </button>
+            </a>
+            <a href="remove-cadets.html">
+                <button class="menu-btn">
+                    <i class="fa fa-minus"></i>
+                </button>
+            </a>
+            <a href="index.html">
+                <button class="menu-btn">
+                    <i class="fa fa-home"></i>
+                </button>
+            </a>
+            <a href="account.html">
+                <button class="menu-btn">
+                    <i class="fa fa-money"></i>
+                </button>
+            </a>
+
+        </div>
+    </header>
+
+    <br>
+    <table class="table table-hover" id="products-table">
+
+    </table>
+    <br>
+    <label class="m-2">Add new product</label>
+    <div>
+        <table id="info" class="table table-hover">
+            <tr>
+                <td>Product Name</td>
+                <td>Product Price</td>
+                <td>Product Quantity</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input id="0"></td>
+                <td><input id="1"></td>
+                <td><input id="2"></td>
+
+                <td> <BUTTON onclick="ins_row()" class="btn btn-primary">Add</BUTTON></td>
+            </tr>
+        </table>
+        <BUTTON id="submit" class="btn btn-success m-4">Submit</BUTTON>
+    </div>
+
+    <script>
+
+        function ins_row() {
+            var col = document.getElementById("info").rows.length - 1;
+            var row = document.getElementById("info").insertRow(col);
+
+            var cell = 0;
+            while (cell <= 2) {
+
+                row.insertCell(cell).innerHTML = document.getElementById(cell.toString()).value;
+
+                document.getElementById('info').rows[col].cells[cell].setAttribute("contenteditable", "true");
+
+                var id = col.toString() + (cell + 1).toString();
+                document.getElementById('info').rows[col].cells[cell].setAttribute("id", id);
+
+                cell++;
+            }
+
+
+            //  row.insertCell(2).innerHTML = "<button onclick='del_row("+col.toString()+")'>Delet</Button>";
+
+
+        }
+
+    // function del_row(row_no) {
+    //     document.getElementById("info").deleteRow(row_no);
+    // }
+
+    </script>
+
+    <script type="module">
+
+        // Import the functions you need from the SDKs you need
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-analytics.js";
+        import { getDatabase, ref, set, get, child, onValue, push, update } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-database.js";
+
+        // TODO: Add SDKs for Firebase products that you want to use
+
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+
+        // Your web app's Firebase configuration
+
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+        const firebaseConfig = {
+
+            apiKey: "AIzaSyDg4s787iggM3YUxvnrdDpkh1f_4fEpWPs",
+
+            authDomain: "canteenvending-d71be.firebaseapp.com",
+
+            databaseURL: "https://canteenvending-d71be-default-rtdb.asia-southeast1.firebasedatabase.app",
+
+            projectId: "canteenvending-d71be",
+
+            storageBucket: "canteenvending-d71be.appspot.com",
+
+            messagingSenderId: "740003631148",
+
+            appId: "1:740003631148:web:23af73b4d0fae2c0e58189",
+
+            measurementId: "G-7GTCJS68QL",
+
+            databaseURL: "https://canteenvending-d71be-default-rtdb.asia-southeast1.firebasedatabase.app/",
+
+        };
+
+
+        // Initialize Firebase
+
+        const app = initializeApp(firebaseConfig);
+
+        const analytics = getAnalytics(app);
+
+        const dataBase = getDatabase(app);
+
+        // Login Check
+        window.onload = function () {
+            if (sessionStorage.getItem["admin"] != null) {
+                window.location.href = "index.html";
+            }
+        }
+
+        function remakeTable(data) {
+
+            const table = document.getElementById("products-table");
+
+            table.innerHTML =
+                "<tr>\
+                <th>Name</th >\
+                <th>Price</th>\
+                <th>Quantity</th>\
+                <th>Restock Quantity</th>\
+            </tr > ";
+
+            for (var name in data) {
+
+                const product = data[name];
+
+                var price;
+                var quantity;
+
+                price = product['price'];
+                quantity = product['quantity'];
+
+                table.innerHTML += "<tr id='tr" + name + "'>\
+            <td>"+ name + "</td>\
+            <td contenteditable='true' id='"+ name + "price" + "'>" + price + "</td>\
+            <td>"+ quantity + "</td>\
+            <td><input class='form-control' type='number' id='"+ name + "'></td>\
+            </tr>";
+            }
+        }
+
+
+        var globalData = {};
+
+        onValue(ref(dataBase, 'products'), (snapshot) => {
+            globalData = snapshot.val();
+            remakeTable(snapshot.val());
+        });
+
+        const submit = document.getElementById("submit");
+        submit.onclick = function () {
+            var rows = document.getElementById("info").rows.length - 2;
+            var data1 = {};
+
+            for (var i = 1; i <= rows; i++) {
+                var name = document.getElementById(i.toString() + "1").innerHTML.toString();
+                var quantity = parseInt(document.getElementById(i.toString() + "3").innerHTML);
+                var price = parseInt(document.getElementById(i.toString() + "2").innerHTML);
+
+                // if (typeof (products[name]) == "undefined") {
+                //     quantity = parseInt(document.getElementById(i.toString() + "3").innerHTML);
+                // } else {
+                //     quantity += parseInt(document.getElementById(i.toString() + "3").innerHTML);
+                // }
+
+                data1[name] = {
+                    price: price,
+                    quantity: quantity,
+                };
+            }
+
+            var data2 = {};
+
+            for (var product in globalData) {
+                const restock = document.getElementById(product);
+                const price = document.getElementById(product + "price");
+                // If restock is not empty
+                if (restock.value != "") {
+                    data2[product] = {
+                        price: parseInt(price.innerHTML),
+                        quantity: globalData[product]['quantity'] + parseInt(restock.value),
+                    };
+                } else {
+                    data2[product] = {
+                        price: parseInt(price.innerHTML),
+                        quantity: globalData[product]['quantity'],
+                    };
+                }
+            }
+
+            update(ref(dataBase, 'products/'), data1);
+            update(ref(dataBase, 'products/'), data2);
+            document.getElementById("info").innerHTML =
+                "<tr>\
+                <td>Product Name</td>\
+                <td>Product Price</td>\
+                <td>Product Quantity</td>\
+                <td></td>\
+            </tr>\
+            <tr>\
+                <td><input id='0'></td>\
+                <td><input id='1'></td>\
+                <td><input id='2'></td>\
+                <td> <BUTTON onclick='ins_row()' class='btn btn-primary'>Add</BUTTON></td>\
+            </tr>";
+
+            alert("Added Successfully");
+        }
+
+    </script>
+
+    <!-- code ends here -->
+</body>
+
+</html>
