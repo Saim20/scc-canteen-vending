@@ -13,8 +13,8 @@
 </head>
 
 <body>
-
-  <header class="p-3" style="background-color:rgb(100, 100, 200);color:white;height:80px;">
+ 
+  <header class="" style="background-color:rgb(100, 100, 200);color:white;height:80px;">
 
     <h3>
       Add Cadet
@@ -22,24 +22,24 @@
 
   </header>
 
-  <div>
-    <table id="house_batch" class="table m-4 table-primary">
+  <div class="mx-5" style="width: 90%;">
+    <table id="house_batch" class="table m-4  table-primary table-bordered">
       <tr>
-        <td>House</td>
+        <th>House</th>
         <td id="house"><input id="house_in" /></td>
-        <td>Batch</td>
+        <th>Batch</th>
         <td id="batch"><input id="batch_in" /></td>
       </tr>
     </table>
   </div>
   <br />
   <br />
-  <div>
-    <table id="info" class="table table-hover m-4 table-primary">
+  <div class="mx-auto" style="width: 90%;">
+    <table id="info" class="table table-hover table-primary table-bordered">
       <tr>
-        <td>Cadet No</td>
-        <td>Cadet Name</td>
-        <td></td>
+        <th>Cadet No</th>
+        <th>Cadet Name</th>
+        <!-- <td></td> -->
       </tr>
       <tr>
         <td><input id="11" class="form-control" /></td>
@@ -129,7 +129,7 @@
       </td>
       </tr>
     </table>
-    <button id="submit" class="btn btn-success m-4">
+    <button id="submit" class="btn btn-outline-success m-4">
       Submit
     </button>
   </div>
