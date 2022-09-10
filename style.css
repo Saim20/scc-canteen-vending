@@ -62,9 +62,9 @@ header{
 
 .banner-container h1{
     font-size: 2rem;
-    background-color: rgba(7, 101,189, 0.8);
+    background-color: rgba(209, 43, 209, 0.8);
     padding: 10px 20px;
-     font-family: 'Handlee', cursive;
+     font-family: 'Montserrat', sans-serif;
      border-radius: 5px;
     
 }
