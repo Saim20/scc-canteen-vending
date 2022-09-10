@@ -160,3 +160,37 @@ footer a:hover{
     background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
     }
 
+
+
+
+
+
+
+
+/* 
+    our_team */
+img.profile{
+  object-fit: cover;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  float:left
+  }
+  
+
+.profile-div{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 50%;
+    z-index: 99%;
+    text-align: center;
+    margin-top:3%;
+}
+.td-img{
+
+}
+.td-text{
+    text-align:left; padding-left: 20px; color: rgb(117, 4, 48); padding-top: 0%;
+}
