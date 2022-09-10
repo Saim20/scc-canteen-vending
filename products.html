@@ -21,29 +21,7 @@
             Add Products
         </h3>
 
-        <div style="float: right;">
-            <a href="add-cadets.html">
-                <button class="menu-btn">
-                    <i class="fa fa-plus"></i>
-                </button>
-            </a>
-            <a href="remove-cadets.html">
-                <button class="menu-btn">
-                    <i class="fa fa-minus"></i>
-                </button>
-            </a>
-            <a href="index.html">
-                <button class="menu-btn">
-                    <i class="fa fa-home"></i>
-                </button>
-            </a>
-            <a href="account.html">
-                <button class="menu-btn">
-                    <i class="fa fa-money"></i>
-                </button>
-            </a>
-
-        </div>
+        
     </header>
 
     <br>
@@ -150,12 +128,6 @@
 
         const dataBase = getDatabase(app);
 
-        // Login Check
-        window.onload = function () {
-            if (sessionStorage.getItem["admin"] != null) {
-                window.location.href = "index.html";
-            }
-        }
 
         function remakeTable(data) {
 
@@ -181,7 +153,7 @@
 
                 table.innerHTML += "<tr id='tr" + name + "'>\
             <td>"+ name + "</td>\
-            <td contenteditable='true' id='"+ name + "price" + "'>" + price + "</td>\
+            <td contenteditable='true' id='"+name+"price"+"'>"+ price + "</td>\
             <td>"+ quantity + "</td>\
             <td><input class='form-control' type='number' id='"+ name + "'></td>\
             </tr>";
@@ -229,7 +201,7 @@
                         price: parseInt(price.innerHTML),
                         quantity: globalData[product]['quantity'] + parseInt(restock.value),
                     };
-                } else {
+                }else{
                     data2[product] = {
                         price: parseInt(price.innerHTML),
                         quantity: globalData[product]['quantity'],

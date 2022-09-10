@@ -1,250 +1,201 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <link href="bootstrap.min.css" rel="stylesheet" />
+    <link href="main.css" rel="stylesheet" />
+    <!-- Add icon library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta charset="utf-8" />
 
-<head>
-  <link href="bootstrap.min.css" rel="stylesheet" />
-  <link href="main.css" rel="stylesheet" />
-  <!-- Add icon library -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <meta charset="utf-8" />
+    <title>Add Cadets</title>
+  </head>
 
-  <title>Add Cadets</title>
-</head>
+  <body>
 
-<body>
+    <header class="p-3" style="background-color:rgb(100, 100, 200);color:white;height:80px;">
 
-  <header class="p-3" style="background-color:rgb(100, 100, 200);color:white;height:80px;">
+        <h3>
+            Add Cadet
+        </h3>
 
-    <h3>
-      Add Cadet
-    </h3>
+    </header>
 
-    <div style="float: right;">
-      <a href="add-cadets.html">
-        <button class="menu-btn">
-          <i class="fa fa-plus"></i>
-        </button>
-      </a>
-      <a href="remove-cadets.html">
-        <button class="menu-btn">
-          <i class="fa fa-minus"></i>
-        </button>
-      </a>
-      <a href="index.html">
-        <button class="menu-btn">
-          <i class="fa fa-home"></i>
-        </button>
-      </a>
-      <a href="account.html">
-        <button class="menu-btn">
-          <i class="fa fa-money"></i>
-        </button>
-      </a>
-
+    <div>
+      <table id="house_batch" class="table m-4">
+        <tr>
+          <td>House</td>
+          <td id="house"><input id="house_in" /></td>
+          <td>Batch</td>
+          <td id="batch"><input id="batch_in" /></td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <br />
+    <div>
+      <table id="info" class="table table-hover m-4">
+        <tr>
+          <td>Cadet No</td>
+          <td>Cadet Name</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><input id="11" class="form-control"/></td>
+          <td><input id="12" class="form-control"/></td>
+          </tr><tr>
+          <td><input id="21" class="form-control"/></td>
+          <td><input id="22" class="form-control"/></td>
+          </tr><tr>
+            <td><input id="31" class="form-control"/></td>
+          <td><input id="32" class="form-control"/></td>
+          </tr><tr>
+            <td><input id="41" class="form-control"/></td>
+          <td><input id="42" class="form-control"/></td>
+          </tr><tr>
+            <td><input id="51" class="form-control"/></td>
+          <td><input id="52" class="form-control"/></td>
+          </tr><tr>
+            <td><input id="61" class="form-control"/></td>
+          <td><input id="62" class="form-control"/></td>
+          </tr><tr>
+            <td><input id="71" class="form-control"/></td>
+          <td><input id="72" class="form-control"/></td>
+          </tr><tr>
+            <td><input id="71" class="form-control"/></td>
+          <td><input id="72" class="form-control"/></td>
+          </tr><tr>
+            <td><input id="81" class="form-control"/></td>
+          <td><input id="82" class="form-control"/></td>
+          </tr><tr>
+            <td><input id="91" class="form-control"/></td>
+          <td><input id="92" class="form-control"/></td>
+          </tr><tr>
+            <td><input id="101" class="form-control"/></td>
+          <td><input id="102" class="form-control"/></td>
+          </tr><tr>
+            <td><input id="111" class="form-control"/></td>
+          <td><input id="112" class="form-control"/></td>
+          </tr><tr>
+            <td><input id="121" class="form-control"/></td>
+          <td><input id="122" class="form-control"/></td>
+          </tr><tr>
+            <td><input id="131" class="form-control"/></td>
+          <td><input id="132" class="form-control"/></td>
+          </tr><tr>
+            <td><input id="141" class="form-control"/></td>
+          <td><input id="142" class="form-control"/></td>
+          </tr><tr>
+            <td><input id="151" class="form-control"/></td>
+          <td><input id="152" class="form-control"/></td>
+          </tr><tr>
+            <td><input id="161" class="form-control"/></td>
+          <td><input id="162" class="form-control"/></td>
+          </tr><tr>
+            <td><input id="171" class="form-control"/></td>
+          <td><input id="172" class="form-control"/></td>
+          </tr><tr>
+            <td><input id="181" class="form-control"/></td>
+          <td><input id="182" class="form-control"/></td>
+          </tr><tr>
+            <td><input id="191" class="form-control"/></td>
+          <td><input id="192" class="form-control"/></td>
+          </tr><tr>
+            <td><input id="201" class="form-control"/></td>
+          <td><input id="202" class="form-control"/></td>
+</tr>
+          <td>
+          </td>
+        </tr>
+      </table>
+      <button id="submit" class="btn btn-success m-4">
+        Submit
+      </button>
     </div>
 
-  </header>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
 
-  <div>
-    <table id="house_batch" class="table m-4">
-      <tr>
-        <td>House</td>
-        <td id="house"><input id="house_in" /></td>
-        <td>Batch</td>
-        <td id="batch"><input id="batch_in" /></td>
-      </tr>
-    </table>
-  </div>
-  <br />
-  <br />
-  <div>
-    <table id="info" class="table table-hover m-4">
-      <tr>
-        <td>Cadet No</td>
-        <td>Cadet Name</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><input id="11" class="form-control" /></td>
-        <td><input id="12" class="form-control" /></td>
-      </tr>
-      <tr>
-        <td><input id="21" class="form-control" /></td>
-        <td><input id="22" class="form-control" /></td>
-      </tr>
-      <tr>
-        <td><input id="31" class="form-control" /></td>
-        <td><input id="32" class="form-control" /></td>
-      </tr>
-      <tr>
-        <td><input id="41" class="form-control" /></td>
-        <td><input id="42" class="form-control" /></td>
-      </tr>
-      <tr>
-        <td><input id="51" class="form-control" /></td>
-        <td><input id="52" class="form-control" /></td>
-      </tr>
-      <tr>
-        <td><input id="61" class="form-control" /></td>
-        <td><input id="62" class="form-control" /></td>
-      </tr>
-      <tr>
-        <td><input id="71" class="form-control" /></td>
-        <td><input id="72" class="form-control" /></td>
-      </tr>
-      <tr>
-        <td><input id="71" class="form-control" /></td>
-        <td><input id="72" class="form-control" /></td>
-      </tr>
-      <tr>
-        <td><input id="81" class="form-control" /></td>
-        <td><input id="82" class="form-control" /></td>
-      </tr>
-      <tr>
-        <td><input id="91" class="form-control" /></td>
-        <td><input id="92" class="form-control" /></td>
-      </tr>
-      <tr>
-        <td><input id="101" class="form-control" /></td>
-        <td><input id="102" class="form-control" /></td>
-      </tr>
-      <tr>
-        <td><input id="111" class="form-control" /></td>
-        <td><input id="112" class="form-control" /></td>
-      </tr>
-      <tr>
-        <td><input id="121" class="form-control" /></td>
-        <td><input id="122" class="form-control" /></td>
-      </tr>
-      <tr>
-        <td><input id="131" class="form-control" /></td>
-        <td><input id="132" class="form-control" /></td>
-      </tr>
-      <tr>
-        <td><input id="141" class="form-control" /></td>
-        <td><input id="142" class="form-control" /></td>
-      </tr>
-      <tr>
-        <td><input id="151" class="form-control" /></td>
-        <td><input id="152" class="form-control" /></td>
-      </tr>
-      <tr>
-        <td><input id="161" class="form-control" /></td>
-        <td><input id="162" class="form-control" /></td>
-      </tr>
-      <tr>
-        <td><input id="171" class="form-control" /></td>
-        <td><input id="172" class="form-control" /></td>
-      </tr>
-      <tr>
-        <td><input id="181" class="form-control" /></td>
-        <td><input id="182" class="form-control" /></td>
-      </tr>
-      <tr>
-        <td><input id="191" class="form-control" /></td>
-        <td><input id="192" class="form-control" /></td>
-      </tr>
-      <tr>
-        <td><input id="201" class="form-control" /></td>
-        <td><input id="202" class="form-control" /></td>
-      </tr>
-      <td>
-      </td>
-      </tr>
-    </table>
-    <button id="submit" class="btn btn-success m-4">
-      Submit
-    </button>
-  </div>
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-analytics.js";
+      import {
+        getDatabase,
+        ref,
+        set,
+        get,
+        child,
+        onValue,
+        push,
+        update,
+      } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-database.js";
 
-  <script type="module">
-    // Import the functions you need from the SDKs you need
+      // TODO: Add SDKs for Firebase products that you want to use
 
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-analytics.js";
-    import {
-      getDatabase,
-      ref,
-      set,
-      get,
-      child,
-      onValue,
-      push,
-      update,
-    } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-database.js";
+      // https://firebase.google.com/docs/web/setup#available-libraries
 
-    // TODO: Add SDKs for Firebase products that you want to use
+      // Your web app's Firebase configuration
 
-    // https://firebase.google.com/docs/web/setup#available-libraries
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
-    // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyDg4s787iggM3YUxvnrdDpkh1f_4fEpWPs",
 
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        authDomain: "canteenvending-d71be.firebaseapp.com",
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyDg4s787iggM3YUxvnrdDpkh1f_4fEpWPs",
+        databaseURL:
+          "https://canteenvending-d71be-default-rtdb.asia-southeast1.firebasedatabase.app",
 
-      authDomain: "canteenvending-d71be.firebaseapp.com",
+        projectId: "canteenvending-d71be",
 
-      databaseURL:
-        "https://canteenvending-d71be-default-rtdb.asia-southeast1.firebasedatabase.app",
+        storageBucket: "canteenvending-d71be.appspot.com",
 
-      projectId: "canteenvending-d71be",
+        messagingSenderId: "740003631148",
 
-      storageBucket: "canteenvending-d71be.appspot.com",
+        appId: "1:740003631148:web:23af73b4d0fae2c0e58189",
 
-      messagingSenderId: "740003631148",
+        measurementId: "G-7GTCJS68QL",
 
-      appId: "1:740003631148:web:23af73b4d0fae2c0e58189",
+        databaseURL:
+          "https://canteenvending-d71be-default-rtdb.asia-southeast1.firebasedatabase.app/",
+      };
 
-      measurementId: "G-7GTCJS68QL",
+      // Initialize Firebase
 
-      databaseURL:
-        "https://canteenvending-d71be-default-rtdb.asia-southeast1.firebasedatabase.app/",
-    };
+      const app = initializeApp(firebaseConfig);
 
-    // Initialize Firebase
+      const analytics = getAnalytics(app);
 
-    const app = initializeApp(firebaseConfig);
+      const dataBase = getDatabase(app);
 
-    const analytics = getAnalytics(app);
+      const submit = document.getElementById("submit");
+      submit.onclick = function () {
+        var data = {};
 
-    const dataBase = getDatabase(app);
+        for (var i = 1; i <= 20; i++) {
+          if (document.getElementById(i + "1").value == "") {
+            continue;
+          }
 
-    // Login Check
-    window.onload = function () {
-      if (sessionStorage.getItem["admin"] != null) {
-        window.location.href = "index.html";
-      }
-    }
-
-    const submit = document.getElementById("submit");
-    submit.onclick = function () {
-      var data = {};
-
-      for (var i = 1; i <= 20; i++) {
-        if (document.getElementById(i + "1").value == "") {
-          continue;
+          data[
+            parseInt(
+              document.getElementById(i.toString() + "1").value.toString()
+            )
+          ] = {
+            name: document
+              .getElementById(i.toString() + "2")
+              .value.toString(),
+            balance: 0,
+            house: document.getElementById("house_in").value.toLowerCase(),
+            batch: parseInt(document.getElementById("batch_in").value),
+          };
         }
 
-        data[
-          parseInt(
-            document.getElementById(i.toString() + "1").value.toString()
-          )
-        ] = {
-          name: document
-            .getElementById(i.toString() + "2")
-            .value.toString(),
-          balance: 0,
-          house: document.getElementById("house_in").value.toLowerCase(),
-          batch: parseInt(document.getElementById("batch_in").value),
-        };
-      }
-
-      update(ref(dataBase, "cadets"), data);
-      document.getElementById("info").innerHTML =
-        "<tr>\
+        update(ref(dataBase, "cadets"), data);
+        document.getElementById("info").innerHTML =
+          "<tr>\
                 <td>Cadet No</td>\
                 <td>Cadet Name</td>\
                 <td></td>\
@@ -255,11 +206,10 @@
                 <td> <BUTTON onclick='ins_row()' class='btn btn-primary'>Add</BUTTON></td>\
             </tr>";
 
-      alert("Added Successfully");
-    };
-  </script>
+        alert("Added Successfully");
+      };
+    </script>
 
-  <!-- code ends here -->
-</body>
-
+    <!-- code ends here -->
+  </body>
 </html>
