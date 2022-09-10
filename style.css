@@ -61,11 +61,12 @@ header{
 }
 
 .banner-container h1{
-    font-size: 1.5rem;
-    background-color: rgba(209, 43, 209, 0.8);
-
+    font-size: 1.8rem;
+   
     padding: 10px 20px;
-     font-family: 'Roboto', sans-serif;
+    font-family: 'Pacifico', 'cursive';
+    color: #b84f9e;
+     
      border-radius: 5px;
     
 }
@@ -160,37 +161,20 @@ footer a:hover{
     background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
     }
 
-
-
-
-
-
-
-
-/* 
-    our_team */
-img.profile{
-  object-fit: cover;
-  border-radius: 50%;
-  height: 100px;
-  width: 100px;
-  float:left
-  }
-  
-
-.profile-div{
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 50%;
-    z-index: 99%;
-    text-align: center;
-    margin-top:3%;
+.border-custom{
+    border-top-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-top-width:  5px;
+    border-left-width: 5px;
+    border-right-width: 5px;
+    border-bottom-width: 5px;
+    border-color: #d43dc8;
 }
-.td-img{
 
+siz{
+    width: 100%;
+    min-height: 100vh;
 }
-.td-text{
-    text-align:left; padding-left: 20px; color: rgb(117, 4, 48); padding-top: 0%;
-}
+
