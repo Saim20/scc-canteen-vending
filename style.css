@@ -64,7 +64,8 @@ header{
     font-size: 1.8rem;
    
     padding: 10px 20px;
-     font-family: 'BebasNeue','Regular';
+    font-family: 'Pacifico', 'cursive';
+    color: #b84f9e;
      
      border-radius: 5px;
     
@@ -176,3 +177,4 @@ siz{
     width: 100%;
     min-height: 100vh;
 }
+
