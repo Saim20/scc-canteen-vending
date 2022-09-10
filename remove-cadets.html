@@ -21,6 +21,7 @@
     <input type="number" class="form-control m-3" id="batch" placeholder="Batch No.">
     <button class="btn btn-outline-danger m-4" id="delete-button">Delete batch</button>
 
+    <script src="login.js"></script>
     <script type="module">
 
         // Import the functions you need from the SDKs you need
@@ -68,6 +69,10 @@
         const analytics = getAnalytics(app);
 
         const dataBase = getDatabase(app);
+
+        // Login Check
+
+        checkLogin();
 
         const button = document.getElementById("delete-button");
         const batch = document.getElementById("batch");

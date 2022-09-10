@@ -68,7 +68,8 @@
     </script>
   <script src="crypto-js.min.js"></script>
 
-  <script type="module">
+    <script src="login.js"></script>
+    <script type="module">
 
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-analytics.js";
@@ -115,11 +116,8 @@
     const adminRef = ref(dataBase);
 
     // Login Check
-    window.onload = function () {
-      if (sessionStorage.getItem["admin"] != null) {
-        window.location.href = "index.html";
-      }
-    }
+
+    checkLogin();
 
     login.onclick = function () {
       get(child(adminRef, "admin")).then((snapshot) => {

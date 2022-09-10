@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Manage Cadets</title>
+</head>
+
+<body>
+
+    <table class='table' id='tab'>
+        <tr>
+            <td>Cadet Name</td>
+            <td>Batch</td>
+            <td>Balance</td>
+            <td>House</td>
+        </tr>
+    </table>
+
+    <script src="login.js"></script>
+    <script type="module">
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-analytics.js";
+        import { getDatabase, ref, set, get, child, onValue, push, update } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-database.js";
+
+        const firebaseConfig = {
+
+            apiKey: "AIzaSyDg4s787iggM3YUxvnrdDpkh1f_4fEpWPs",
+
+            authDomain: "canteenvending-d71be.firebaseapp.com",
+
+            databaseURL: "https://canteenvending-d71be-default-rtdb.asia-southeast1.firebasedatabase.app",
+
+            projectId: "canteenvending-d71be",
+
+            storageBucket: "canteenvending-d71be.appspot.com",
+
+            messagingSenderId: "740003631148",
+
+            appId: "1:740003631148:web:23af73b4d0fae2c0e58189",
+
+            measurementId: "G-7GTCJS68QL",
+
+            databaseURL: "https://canteenvending-d71be-default-rtdb.asia-southeast1.firebasedatabase.app/",
+
+        };
+
+        // Initialize Firebase
+
+        const app = initializeApp(firebaseConfig);
+
+        const analytics = getAnalytics(app);
+
+        const dataBase = getDatabase(app);
+
+        // Login to SCC Vending
+
+        const username = document.getElementById("username");
+        const password = document.getElementById("password");
+        const login = document.getElementById("login");
+
+        // Login Check
+
+        checkLogin();
+
+        const table = document.getElementById('tab');
+        for (var num in data1) {
+            data = data1[num];
+            table.innerHTML += "<tr>";
+            var count = 0;
+            for (key in data) {
+                table.innerHTML += "<td contenteditable ='true' id='" + num + "-" + key + "' >" + data[key] + '</td>';
+            }
+            table.innerHTML += "</tr>";
+
+        }
+
+
+
+    </script>
+
+
+</body>
+
+</html>
