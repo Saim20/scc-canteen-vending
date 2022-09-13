@@ -1,14 +1,16 @@
+
+}
 html{
     scroll-behavior: smooth;
 }
 
 body{
    
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans;
 
 }
 h1,h2,h3,h4,h5,h6{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans;
 }
 
 .section-title h3{
@@ -123,9 +125,15 @@ header{
 /* about-me ends */
 
 /* footer starts  */
+@font-face {
+    font-family: Roboto;
+    src: url("fonts/Roboto-Medium.ttf");
+}
 footer{
     padding: 1% 10%;
     background: #056676;
+    font-family: 'Roboto';
+    font-size: large;
 }
 
 footer a {
