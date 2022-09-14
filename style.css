@@ -1,5 +1,5 @@
 
-}
+
 html{
     scroll-behavior: smooth;
 }
@@ -62,17 +62,6 @@ header{
     height: 100vh;
 }
 
-.banner-container h1{
-    font-size: 1.8rem;
-   
-    padding: 10px 20px;
-    font-family: 'Pacifico', 'cursive';
-    color: #b6003d;
-    text-decoration: solid;
-     
-     border-radius: 5px;
-    
-}
 /* header ends  */
 
 /* features starts */
