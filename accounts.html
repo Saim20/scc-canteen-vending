@@ -14,6 +14,51 @@
 
 <body>
 
+    <style>.navbar{
+        padding: .0001rem;
+        background-color: rgba(0,0,0,0.3);
+        }
+      </style>
+    
+      <nav class="navbar navbar-expand-md sticky-top">          
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span> <i class="fas fa-bars navbar-icon"></i> </span>
+        </button>
+    
+        <div class="collapse navbar-collapse" style="padding-left:27%;" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto"> 
+            <li class="nav-item active">
+              <a class="nav-link text-center text-md-left" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-center text-md-left" href="index.html#about-us">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-center text-md-left" href="accounts.html">Accounts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-center text-md-left" href="products.html">Products</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a style="text-align: center;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Manage Cadets
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="add-cadets.html">Add Cadets</a>
+                <a class="dropdown-item" href="remove-cadets.html">Remove Cadets</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="advanced.html">Advanced</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-center text-md-left" id="logout">Logout</a>
+            </li>               
+          </ul>
+        </div>
+       
+      </nav>
+     
+
     <header 
      class="text-center" 
      style="background: rgb(0,4,36);
