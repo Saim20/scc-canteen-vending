@@ -2,139 +2,240 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <link rel="stylesheet" href="style.css">
-    <title>Manage Cadets</title>
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Manage Cadets</title>
 </head>
 
 <body>
 
-    <style>.navbar{
-        padding: .0001rem;
-        background-color: rgba(0,0,0,0.3);
-        }
-      </style>
-    
-      <nav class="navbar navbar-expand-md sticky-top" style="background-color: black;opacity:0.9;">          
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span> <i class="fas fa-bars navbar-icon"></i> </span>
-        </button>
-    
-        <div class="collapse navbar-collapse" style="padding-left:27%;" id="navbarNavDropdown">
-          <ul class="navbar-nav ml-auto"> 
-            <li class="nav-item active">
-              <a class="nav-link text-center text-md-left" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-center text-md-left" href="index.html#about-us">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-center text-md-left" href="accounts.html">Accounts</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-center text-md-left" href="products.html">Products</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a style="text-align: center;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Manage Cadets
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="add-cadets.html">Add Cadets</a>
-                <a class="dropdown-item" href="remove-cadets.html">Remove Cadets</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="advanced.html">Advanced</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-center text-md-left" id="logout">Logout</a>
-            </li>               
-          </ul>
-        </div>
-       
-      </nav>
-     
+  <style>
+    .navbar {
+      padding: .0001rem;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+  </style>
 
-    <table class='table table-primary' id='tab'>
-        <tr>
-            <th>Cadet Name</th>
-            <th>Batch</th>
-            <th>Balance</th>
-            <th>House</th>
-        </tr>
+  <nav class="navbar navbar-expand-md sticky-top" style="background-color: black;opacity:0.9;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span> <i class="fas fa-bars navbar-icon"></i> </span>
+    </button>
+
+    <div class="collapse navbar-collapse" style="padding-left:27%;" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link text-center text-md-left" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-center text-md-left" href="index.html#about-us">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-center text-md-left" href="accounts.html">Accounts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-center text-md-left" href="products.html">Products</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a style="text-align: center;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Manage Cadets
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="add-cadets.html">Add Cadets</a>
+            <a class="dropdown-item" href="remove-cadets.html">Remove Cadets</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="advanced.html">Advanced</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-center text-md-left" id="logout">Logout</a>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+
+  <header class="text-center"
+    style="background: rgb(0,4,36);
+  background: rgb(1,7,57);
+  background: linear-gradient(90deg, rgba(1,7,57,1) 0%, rgba(47,0,71,1) 45%, rgba(102,0,19,1) 100%);color: white;height:80px; padding-top: 20px;">
+
+    <h2>
+      <strong>
+        Manage Cadets
+      </strong>
+    </h2>
+
+
+
+  </header>
+
+  <div class="m-4">
+
+    <label for="filter" class="p-4">Choose a house:</label>
+
+    <select name="filter" id="filter-house">
+      <option value="" selected>All Houses</option>
+      <option value="titumir">Titumir</option>
+      <option value="shahjalal">Shahjalal</option>
+      <option value="surma">Surma</option>
+    </select>
+
+    <label for="filter" class="p-4">Choose a house:</label>
+
+    <select name="filter" id="filter-batch">
+      <option value="" selected>All Batches</option>
+      <option value="41">41</option>
+      <option value="42">42</option>
+      <option value="43">43</option>
+      <option value="44">44</option>
+      <option value="45">45</option>
+      <option value="46">46</option>
+    </select>
+
+    <table class='table table-hover table-primary' id='tab'>
+      <tr>
+        <th>Cadet Name</th>
+        <th>Batch</th>
+        <th>Balance</th>
+        <th>House</th>
+      </tr>
     </table>
+  </div>
 
-    <footer style="width:100%;text-align:center;background-color:rgb(226, 226, 226);
+  <footer style="width:100%;text-align:center;background-color:rgb(226, 226, 226);
     display: flexbox; z-index: 0; padding-top: .3%; padding-bottom: .3%; font-weight: bolder;color: rgb(59, 59, 59); position: fixed;
 bottom: 0;">
-    Created &amp; Developed by : <a href="index.html#about-us" style="color:#C12267; text-decoration: underline;"> Cadets of 41st batch</a>
-</footer>
+    Created &amp; Developed by : <a href="index.html#about-us" style="color:#C12267; text-decoration: underline;">
+      Cadets of 41st batch</a>
+  </footer>
+    <!-- bootstrap js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+    integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous">
+    </script>
+
     <script src="login.js"></script>
-    <script type="module">
+  <script type="module">
 
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-analytics.js";
-        import { getDatabase, ref, set, get, child, onValue, push, update } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-database.js";
+    // Import the functions you need from the SDKs you need
 
-        const firebaseConfig = {
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-analytics.js";
+    import { getDatabase, ref, set, get, child, onValue, push, update } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-database.js";
 
-            apiKey: "AIzaSyDg4s787iggM3YUxvnrdDpkh1f_4fEpWPs",
+    // TODO: Add SDKs for Firebase products that you want to use
 
-            authDomain: "canteenvending-d71be.firebaseapp.com",
+    // https://firebase.google.com/docs/web/setup#available-libraries
 
-            databaseURL: "https://canteenvending-d71be-default-rtdb.asia-southeast1.firebasedatabase.app",
 
-            projectId: "canteenvending-d71be",
+    // Your web app's Firebase configuration
 
-            storageBucket: "canteenvending-d71be.appspot.com",
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
-            messagingSenderId: "740003631148",
+    const firebaseConfig = {
 
-            appId: "1:740003631148:web:23af73b4d0fae2c0e58189",
+      apiKey: "AIzaSyDg4s787iggM3YUxvnrdDpkh1f_4fEpWPs",
 
-            measurementId: "G-7GTCJS68QL",
+      authDomain: "canteenvending-d71be.firebaseapp.com",
 
-            databaseURL: "https://canteenvending-d71be-default-rtdb.asia-southeast1.firebasedatabase.app/",
+      databaseURL: "https://canteenvending-d71be-default-rtdb.asia-southeast1.firebasedatabase.app",
 
-        };
+      projectId: "canteenvending-d71be",
 
-        // Initialize Firebase
+      storageBucket: "canteenvending-d71be.appspot.com",
 
-        const app = initializeApp(firebaseConfig);
+      messagingSenderId: "740003631148",
 
-        const analytics = getAnalytics(app);
+      appId: "1:740003631148:web:23af73b4d0fae2c0e58189",
 
-        const dataBase = getDatabase(app);
+      measurementId: "G-7GTCJS68QL",
 
-        // Login to SCC Vending
+      databaseURL: "https://canteenvending-d71be-default-rtdb.asia-southeast1.firebasedatabase.app/",
 
-        const username = document.getElementById("username");
-        const password = document.getElementById("password");
-        const login = document.getElementById("login");
+    };
 
-        // Login Check
 
-        checkLogin();
+    // Initialize Firebase
 
-        const table = document.getElementById('tab');
-        for (var num in data1) {
-            data = data1[num];
-            table.innerHTML += "<tr>";
-            var count = 0;
-            for (key in data) {
-                table.innerHTML += "<td contenteditable ='true' id='" + num + "-" + key + "' >" + data[key] + '</td>';
-            }
-            table.innerHTML += "</tr>";
+    const app = initializeApp(firebaseConfig);
 
+    const analytics = getAnalytics(app);
+
+    const dataBase = getDatabase(app);
+
+    // Login Check
+
+    checkLogin();
+
+    const filterHouse = document.getElementById("filter-house");
+    const filterBatch = document.getElementById("filter-batch");
+
+    function rebuildTable(data) {
+      var table = document.getElementById("tab");
+      table.innerHTML = "<tr><th>Cadet Name</th><th>Batch</th><th>Balance</th><th>House</th><th>Delete</th></tr>";
+
+      for (var num in data) {
+        var cadet = data[num];
+
+        var balance;
+        var name;
+        var house;
+        var batch;
+
+        balance = cadet['balance'];
+        name = cadet['name'];
+        house = cadet['house'];
+        batch = cadet['batch'];
+
+        // Filter here
+        if (filterHouse.value != "") {
+          if (house != filterHouse.value) {
+            continue;
+          }
+        }
+        if (filterBatch.value != "") {
+          if (batch != filterBatch.value) {
+            continue;
+          }
         }
 
+        table.innerHTML += ("\
+        <tr>\
+          <td>"+ name + "</td>\
+          <td>"+ batch + "</td>\
+          <td>"+ balance + "</td>\
+          <td>"+ house + "</td>\
+          <td><button id='"+ num + "' class='btn btn-danger'>Delete</button></td>\
+          </tr>\
+        ");
+      }
+    }
 
+    filterHouse.onchange = function () {
+      remakeTable(globalData);
+    }
 
-    </script>
+    filterBatch.onchange = function () {
+      remakeTable(globalData);
+    }
+
+    onValue(ref(dataBase, 'cadets'), (snapshot) => {
+      const data = snapshot.val();
+      rebuildTable(data);
+    });
+
+  </script>
 
 
 </body>
